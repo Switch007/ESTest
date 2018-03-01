@@ -78,18 +78,15 @@ public class TestIndex {
         FileInputStream fis = new FileInputStream(new File("f://1.jpg"));
         BufferedInputStream bfi = new BufferedInputStream(fis);
         FileOutputStream fos = new FileOutputStream(new File("f://2.jpg"));
-       /* int i = 0;
+       int i = 0;
         byte[] bytes = new byte[1024];
         while ((i = bfi.read(bytes)) != -1) {
             fos.write(bytes, 0, i);
         }
         fos.flush();
         fos.close();
-        bfi.close();*/
+        bfi.close();
 
-        FileChannel fci=fis.getChannel();
-        FileChannel fco=fos.getChannel();
-        fci.transferTo(0, fci.size(), fco);
     }
 
 }
